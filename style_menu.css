@@ -1,0 +1,223 @@
+
+
+.menu-checkbox {
+  display: none;
+  z-index: 2;
+}
+
+.menu {
+  width: 96px;
+  position: relative;
+  left:700px  ; 
+  top:50px ; 
+  z-index: 2;
+}
+
+.menu-dots {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.4rem  #036666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.menu-dots:hover {
+  box-shadow: 0 0 0 0.3rem  #036666, 0 0 0 1rem rgba( #036666, 0.16);
+  transform: scale(1.2) rotate(90deg);
+}
+
+.menu-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  background-color: #febe75;
+  border-radius: 50%;
+}
+
+.menu-dot + .menu-dot {
+  margin-top: 0.3rem;
+}
+
+.menu-items {
+  position: absolute;
+  top: -4.4rem;
+  left: -5.2rem;
+  width: 11.5rem;
+  height: 13.6rem;
+  color: #fff;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.menu-texts {
+  position: absolute;
+  top: -7rem;
+  left: -12.2rem;
+  width: 26.5rem;
+  height: 22.6rem;
+  color: black;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 2;
+  
+}
+.menu-item {
+  transform: scale(0.5);
+  filter: blur(10px);
+  transition: 0.3s;
+}
+.menu-text {
+  transform: scale(0.5);
+  filter: blur(10px);
+  transition: 0.3s;
+}
+
+.menu-item:nth-child(odd) {
+  text-align: right;
+}
+
+.menu-item:nth-child(even) {
+  text-align: left;
+}
+.menu-text:nth-child(odd) {
+  text-align: right;
+}
+
+.menu-text:nth-child(even) {
+  text-align: left;
+}
+
+
+.menu-item:first-child,
+.menu-item:last-child {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.menu-text:first-child,
+.menu-text:last-child {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.menu-checkbox:checked + .menu > .menu-dots {
+  transform: none;
+  box-shadow: 0 0 0 4.4rem  #036666;
+}
+
+/*decalage au click  */
+.menu-checkbox:checked + .menu {
+  top:100px ; 
+}
+
+
+.menu-checkbox:checked + .menu > .menu-items {
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu-checkbox:checked + .menu > .menu-texts {
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu-closer-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 96px;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.menu-checkbox:checked + .menu > .menu-items > .menu-item {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+.menu-checkbox:checked + .menu > .menu-texts > .menu-text {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(5) {
+  transition-delay: 0.25s;
+}
+
+.menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+/* text */
+
+.menu-checkbox:checked + .menu > .menu-texts > .menu-text:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.menu-checkbox:checked + .menu > .menu-texts > .menu-text:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.menu-checkbox:checked + .menu > .menu-texts > .menu-text:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.menu-checkbox:checked + .menu > .menu-texts > .menu-text:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.menu-checkbox:checked + .menu > .menu-texts > .menu-text:nth-child(5) {
+  transition-delay: 0.25s;
+}
+
+.menu-checkbox:checked + .menu > .menu-texts > .menu-text:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+.menu-checkbox:checked + .menu > .menu-closer-overlay {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+ul{
+  list-style-type: none;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.626); /* Semi-transparent black overlay */
+  z-index: 1; /* Ensure the overlay appears above other content */
+  display: none;
+}
